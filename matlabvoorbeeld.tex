@@ -1,0 +1,12 @@
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+\begin{minted}[breaklines, framesep=\baselineskip, linenos, bgcolor=bg]{matlab}
+function [ result ] = fibonacci( n )
+
+if n==0||n==1
+    result = n;
+
+else
+    result = fibonacci(n-2)+fibonacci(n-1);
+end
+end
+\end{minted}

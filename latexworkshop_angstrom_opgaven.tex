@@ -1,0 +1,114 @@
+\documentclass{article}
+
+\usepackage[english, dutch]{babel}
+\usepackage[style=ieee, backref=true, backend=biber]{biblatex}
+\addbibresource{referenties.bib} % Importeert het bibliografiebestand
+
+\usepackage{parskip}
+\usepackage{doc}
+\usepackage{amsmath, amssymb}
+\usepackage{color}
+\usepackage{qrcode}
+\usepackage{graphicx} 
+\usepackage{bookmark} 
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{listings}
+\lstset{language=C++}
+\usepackage[per-mode=reciprocal, separate-uncertainty=true]{siunitx}
+\addto\extrasgerman{\sisetup{locale = DE}}
+\sisetup{%
+	output-decimal-marker = {,},
+	inter-unit-product = \ensuremath{{}\cdot{}},
+	exponent-product = \ensuremath{{}\cdot{}},
+	list-final-separator = { en },
+	list-pair-separator = { en },
+	range-phrase = { tot },
+}
+
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks   = true,
+  urlcolor     = blue,
+  linkcolor    = blue,
+  citecolor   = purple,
+  bookmarksopen = true,
+  bookmarksopenlevel = 2,
+}
+\usepackage{url}
+\usepackage{metalogo}
+
+\usepackage{tabularray}
+\usepackage{caption}
+\captionsetup{labelfont={bf}}
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+
+\usepackage{minted} 
+\setminted[latex]{obeytabs=true, tabsize=2, breaklines, framesep=5mm, bgcolor=bg}
+\setminted[bibtex]{obeytabs=true, tabsize=2, breaklines, framesep=5mm, bgcolor=bg}
+\setminted[text]{obeytabs=true, tabsize=2, breaklines, framesep=5mm}
+% \usemintedstyle{bw}
+
+\usepackage[a4paper,left=3cm,right=2.5cm,top=1.5cm,bottom=1.5cm,heightrounded]{geometry}
+
+% \usepackage{tcolorbox}
+% \newtcolorbox{mybox_1}{colback=blue!5!white,colframe=blue!75!black}
+
+\usepackage{csquotes}
+
+\title{\LaTeX-workshop voor beginners (Opgaven)}
+\author{Joost Scheffer, studievereniging Ångström}
+\date{\today}
+\begin{document}
+\maketitle
+\section{Nieuw document}
+\begin{enumerate}
+	\item Begin een \LaTeX-document met de tekst ``Hello World!''
+\end{enumerate}
+\section{Tekst}
+\begin{enumerate}
+	\item Maak twee paragrafen en twee deelparagrafen, zoek op het internet op hoe je een ongenummerde paragraaf maakt.
+	\item Zoek op (op internet) hoe je accenten kunt maken in letters, zoals bij coördinaat, café, curaçao\"enaar, etc. Kijk ook naar het verschil tussen ''tekst'' en ``tekst'' (let op de accentjes).
+	\item  Sommige karakters, zoals \verb|{| hebben al een betekenis binnen \LaTeX. Hoe denk je dat je deze karakters in een tekst zou kunnen weergeven in de PDF. Tip: hoe zien de commando’s er standaard uit?
+	\item Maak zelf een paar nieuwe commando’s. Dit doe je door \verb|\newcommand{}{}| in de preamble te zetten. Het eerste argument is de naam van je commando (bijvoorbeeld \verb|\R|), en het tweede argument is het commando dat daardoor uitgevoerd moet worden (bijvoorbeeld \verb|\mathbb{R}|).
+	\item Zoek op het internet op hoe je een bereik aangeeft met een half-kastlijntje (\textit{en-dash}) zoals in ``20--26''.
+\end{enumerate}
+\section{Formules en getallen}
+\begin{enumerate}
+	\item Reproduceer de volgende formules. Let op de accolades!
+	      \begin{enumerate}
+		      \item \[ a_{1,1} + a_{1,2} + \ldots + a_{1,n} = \sum_{i=1}^{n} a_{1,i} \]
+		      \item \[ \lim_{\xi \to \infty} 2^{-\xi} = 0 \]
+		      \item \[ \begin{pmatrix} k\\n  \end{pmatrix} = \prod_{\ell=1}^{n} \frac{k-\ell+1 }{\ell} \]
+		      \item \[ \Omega[n] \equiv \sin^2\left( \frac{\pi n}{M - 1} \right) \]
+	      \end{enumerate}
+	\item Zorg er voor dat een van de vergelijkingen een nummer krijgt.
+	\item Gebruik de commando's uit het \texttt{siunitx} package en maak het volgende na
+	      \begin{enumerate}
+		      \item De straal van de aarde is \qty{6 357}{\kilo\metre}
+		      \item De straal van de aarde is \qty{6.357e6}{\metre}
+		      \item \( h = \qty{6.62607015e-34}{\joule\per\hertz} \)
+		      \item \( q = \qty{5+-0.01e3}{\coulomb} \)
+	      \end{enumerate}
+
+\end{enumerate}
+
+\newpage
+\section{Afbeeldingen invoegen}
+Begin deze paragraaf op een nieuwe pagina.
+Voeg een afbeelding toe aan de bovenkant van de pagina, met onderschrift, zoals hierboven. Plaats ook een afbeelding in het midden in een stuk tekst.
+
+\begin{figure}[t]
+	\begin{center}
+		\includegraphics[width=0.3\linewidth]{logo.pdf}
+	\end{center}
+	\caption{Ångström logo}
+\end{figure}
+
+\section{Referenties}
+\begin{enumerate}
+	\item Kies je favoriete vergelijking uit Paragraaf 3 en maak daar een verwijzing naar.
+	\item Maak twee keer een bibliografie ``entry'' en citeer deze.
+\end{enumerate}
+
+\end{document}
